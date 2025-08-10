@@ -4,8 +4,8 @@ import profile from "../../Assets/IMG_20250807_205654.jpg";
 function Banner() {
   return (
     <>
-      <section id="home" className="min-h-screen flex items-center text-white">
-        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-8 items-center py-24">
+      <section id="home" className=" flex items-center text-white">
+        <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-8 items-center ">
           <motion.div
             initial={{ x: -40, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

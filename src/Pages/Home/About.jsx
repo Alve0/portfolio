@@ -3,8 +3,8 @@ import React from "react";
 export default function About() {
   return (
     <section id="about" className="py-20">
-      <div className="max-w-4xl mx-auto">
-        <div className="border-1 border-gray-100 p-6 rounded-lg ">
+      <div className="max-w-4xl mx-auto ">
+        <div className="border-1 border-gray-100 bg-white/5 p-6 rounded-lg ">
           {" "}
           <h2 className="text-3xl font-bold">About Me</h2>
           <p className="mt-4 text-gray-300">
@@ -16,8 +16,8 @@ export default function About() {
           </p>
         </div>
 
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          <div className="border-1 border-gray-100 p-6 rounded-lg ">
+        <div className="mt-6 grid md:grid-cols-2 gap-6 ">
+          <div className="border-1 border-gray-100 p-6 bg-white/5 rounded-lg ">
             <h3 className="font-semibold">What I enjoy</h3>
             <p className="mt-2 text-gray-300">
               Polishing micro-interactions, improving accessibility, and
@@ -25,7 +25,7 @@ export default function About() {
               to open-source tools.
             </p>
           </div>
-          <div className="border-1 border-gray-100 p-6 rounded-lg ">
+          <div className="border-1 border-gray-100 p-6 rounded-lg bg-white/5  ">
             <h3 className="font-semibold">Outside programming</h3>
             <p className="mt-2 text-gray-300">
               I like football, sketching UI ideas on paper, and playing with

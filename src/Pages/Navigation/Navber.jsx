@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useNavigate } from "react-router";
 
@@ -26,6 +26,7 @@ export default function Navbar() {
       : [
           { label: "Home", id: "home" },
           { label: "About", id: "about" },
+          { label: "Skills", id: "skills" },
           { label: "Projects", id: "projects" },
           { label: "Contact", id: "contact" },
         ];
@@ -41,6 +42,30 @@ export default function Navbar() {
       }
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let current = section;
+      NAV_ITEMS.forEach((item) => {
+        if (item.id !== "dashboard") {
+          const el = document.getElementById(item.id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (
+              rect.top <= window.innerHeight / 2 &&
+              rect.bottom >= window.innerHeight / 2
+            ) {
+              current = item.id;
+            }
+          }
+        }
+      });
+      setSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [NAV_ITEMS]);
 
   return (
     <nav className="w-full px-6 md:px-12 py-4 flex items-center justify-between fixed top-0 left-0 z-50 backdrop-blur bg-black/40">

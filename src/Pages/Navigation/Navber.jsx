@@ -10,12 +10,12 @@ export default function Navbar() {
   const SOCIALS = [
     {
       name: "GitHub",
-      href: "https://github.com/your-username",
+      href: "https://github.com/Alve0",
       icon: <FaGithub />,
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/your-username",
+      href: "https://linkedin.com/in/iftekherhossainalve",
       icon: <FaLinkedin />,
     },
   ];
@@ -105,11 +105,10 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-        {!user && (
-          <button className="items-center gap-2 px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg">
-            Resume
-          </button>
-        )}
+
+        <button className="items-center gap-2 px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg">
+          Resume
+        </button>
       </div>
     </nav>
   );

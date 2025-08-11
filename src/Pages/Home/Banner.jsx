@@ -33,12 +33,15 @@ function Banner() {
               >
                 Download Resume
               </a>
-              <button
-                onClick={() => onNavigate("projects")}
-                className="px-4 py-2 rounded-md border border-white/10"
-              >
-                View Projects
-              </button>
+              <a href="#projects">
+                {" "}
+                <button
+                  onClick={() => onNavigate("projects")}
+                  className="px-4 py-2 rounded-md border border-white/10"
+                >
+                  View Projects
+                </button>
+              </a>
             </div>
 
             <div className="mt-8 flex items-center gap-3">

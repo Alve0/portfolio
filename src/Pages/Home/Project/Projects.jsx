@@ -70,7 +70,7 @@ export default function Projects({ onOpen }) {
       tech: ["React", "Tailwind CSS", "Firebase", "React Router"],
       description:
         "An intuitive and responsive portfolio website showcasing projects and skills with dynamic content management, enabling users to explore, interact, and get inspired.",
-      live: "https://your-live-link-recipe-raza.com",
+      live: "https://portfolio-50.web.app/",
       github: "https://github.com/Alve0/portfolio.git",
       challenges:
         "Seamlessly integrating Firebase for real-time data updates and user interactions, while maintaining optimal performance and smooth navigation across multiple project sections.",

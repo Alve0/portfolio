@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 
 export default function Navbar() {
   const [section, setSection] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
   const [user] = useState(null);
   const navigate = useNavigate();
 
@@ -41,6 +42,7 @@ export default function Navbar() {
         el.scrollIntoView({ behavior: "smooth" });
       }
     }
+    setMenuOpen(false); // close mobile menu after click
   };
 
   useEffect(() => {
@@ -65,14 +67,17 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [NAV_ITEMS]);
+  }, [NAV_ITEMS, section]);
 
   return (
     <nav className="w-full px-6 md:px-12 py-4 flex items-center justify-between fixed top-0 left-0 z-50 backdrop-blur bg-black/40">
+      {/* Logo and Desktop Menu */}
       <div className="flex items-center gap-3">
         <div className="text-2xl font-semibold text-white">
           Alve<span className="text-indigo-400">.</span>
         </div>
+
+        {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 ml-8 text-sm opacity-90">
           {NAV_ITEMS.map((item) => (
             <button
@@ -90,6 +95,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Socials and Resume */}
       <div className="flex items-center gap-4">
         <div className="hidden sm:flex gap-3">
           {SOCIALS.map((s) => (
@@ -106,10 +112,40 @@ export default function Navbar() {
           ))}
         </div>
 
-        <button className="items-center gap-2 px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg">
-          Resume
+        <a
+          href="https://drive.google.com/file/d/1Ma8Z0sovCfgDp3X7DVNLN96thUfw2Byf/view?usp=sharing"
+          target="_blank"
+        >
+          <button className="items-center gap-2 px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg">
+            Resume
+          </button>
+        </a>
+
+        {/* Hamburger Menu Button */}
+        <button
+          className="md:hidden text-white text-2xl ml-2"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "✕" : "☰"}
         </button>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-full left-0 w-full bg-black/90 flex flex-col items-center gap-4 py-4 md:hidden">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`hover:text-indigo-300 ${
+                section === item.id ? "text-indigo-400 font-semibold" : "text-white"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }

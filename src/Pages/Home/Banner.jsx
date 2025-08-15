@@ -25,22 +25,30 @@ function Banner() {
             </p>
 
             <div className="mt-6 flex items-center gap-4">
+             <motion.button
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.05 }}
+                >
               <a
-                href="/resume.pdf"
-                target="_blank"
+                href="https://drive.usercontent.google.com/u/0/uc?id=1Ma8Z0sovCfgDp3X7DVNLN96thUfw2Byf&export=download"
+              
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg"
-              >
-                Download Resume
-              </a>
+              > 
+                  Download Resume
+               
+              
+              </a> </motion.button>
               <a href="#projects">
                 {" "}
-                <button
+                <motion.button
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.05 }}
                   onClick={() => onNavigate("projects")}
                   className="px-4 py-2 rounded-md border border-white/10"
                 >
                   View Projects
-                </button>
+                </motion.button>
               </a>
             </div>
 

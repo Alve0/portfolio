@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import React from "react";
 import profile from "../../Assets/IMG_20250807_205654.jpg";
+import { downloadResume } from "../Navigation/Navber";
 function Banner() {
   return (
     <>
@@ -25,20 +26,18 @@ function Banner() {
             </p>
 
             <div className="mt-6 flex items-center gap-4">
-             <motion.button
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ scale: 1.05 }}
+              <motion.button
+                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <a
+                  href={downloadResume}
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg"
                 >
-              <a
-                href="https://drive.usercontent.google.com/u/0/uc?id=1Ma8Z0sovCfgDp3X7DVNLN96thUfw2Byf&export=download"
-              
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg"
-              > 
                   Download Resume
-               
-              
-              </a> </motion.button>
+                </a>{" "}
+              </motion.button>
               <a href="#projects">
                 {" "}
                 <motion.button

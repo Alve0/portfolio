@@ -1,6 +1,10 @@
+import { defaultOffset } from "motion";
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useNavigate } from "react-router";
+
+export const downloadResume =
+  "https://drive.usercontent.google.com/u/0/uc?id=1TlohzA-hZA_ACG4Mk8Hgzat-Pbua0-Eb&export=download";
 
 export default function Navbar() {
   const [section, setSection] = useState("home");
@@ -21,6 +25,8 @@ export default function Navbar() {
     },
   ];
 
+  const showResume =
+    "https://drive.google.com/file/d/1TlohzA-hZA_ACG4Mk8Hgzat-Pbua0-Eb/view?usp=drive_link";
   const NAV_ITEMS =
     user?.role === "admin"
       ? [{ label: "Dashboard", id: "dashboard" }]
@@ -112,10 +118,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="https://drive.google.com/file/d/1Ma8Z0sovCfgDp3X7DVNLN96thUfw2Byf/view?usp=sharing"
-          target="_blank"
-        >
+        <a href={showResume} target="_blank">
           <button className="items-center gap-2 px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-lg">
             Resume
           </button>
@@ -138,7 +141,9 @@ export default function Navbar() {
               key={item.id}
               onClick={() => handleNavClick(item.id)}
               className={`hover:text-indigo-300 ${
-                section === item.id ? "text-indigo-400 font-semibold" : "text-white"
+                section === item.id
+                  ? "text-indigo-400 font-semibold"
+                  : "text-white"
               }`}
             >
               {item.label}
